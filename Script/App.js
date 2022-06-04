@@ -1,7 +1,10 @@
-window.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
     const burger = document.querySelector('.burger'),
           menu = document.querySelector('.menu'),
-          exitBtn = document.querySelector('.exit');
+          exitBtn = document.querySelector('.exit'),
+          modal = document.querySelector('.modal'),
+          closeBtn = document.querySelector('.close'),
+          modalBtn = document.querySelector('.btn');
 
     function openMenu() {
         menu.classList.add('show');
@@ -25,5 +28,24 @@ window.addEventListener('DOMContentLoaded', () => {
     checkbox.addEventListener('change', () => {
         document.body.classList.toggle('dark')
     });
+
+    // Modal==============================
+
+    modalBtn.addEventListener('click', () => {
+        openModal();
+    });
+
+    closeBtn.addEventListener('click', () => {
+        closeModal();
+    })
+    function openModal() {
+        modal.classList.add('show');
+        modal.classList.remove('hide');
+    }
+
+    function closeModal() {
+        modal.classList.add('hide');
+        modal.classList.remove('show');
+    }
 
 });
